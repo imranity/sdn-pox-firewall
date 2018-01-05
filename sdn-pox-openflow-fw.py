@@ -22,8 +22,8 @@ def __init__(self):
     with open(policyFile, 'rb') as f:
     reader = csv.DictReader(f)
     for row in reader:
-    self.deny.append((EthAddr(row['mac_0']), EthAddr(row['mac_1'])))
-    self.deny.append((EthAddr(row['mac_1']), EthAddr(row['mac_0'])))
+        self.deny.append((EthAddr(row['mac_0']), EthAddr(row['mac_1'])))
+        self.deny.append((EthAddr(row['mac_1']), EthAddr(row['mac_0'])))
  
 def _handle_ConnectionUp(self, event):
     for (src, dst) in self.deny:
